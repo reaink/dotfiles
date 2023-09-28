@@ -8,14 +8,14 @@ export FONT="SF Pro"
 export NERD_FONT="SFMono Nerd Font"
 
 sketchybar --bar height=35        \
-                 blur_radius=100  \
-                 radius=100  \
+                 blur_radius=50  \
+                 radius=150  \
                  position=top     \
-                 y_offset=10 \
+                 y_offset=6 \
                  padding_left=10  \
                  corner_radius=10 \
                  padding_right=10 \
-                 margin=12 \
+                 margin=10 \
                  color=0x25ffffff \
                  shadow=on
 
