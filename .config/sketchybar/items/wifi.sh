@@ -1,19 +1,14 @@
-source "$PLUGIN_DIR/wifi.sh"
+#!/bin/bash
 
-sketchybar --add item           wifi.control right                      \
-                                                                        \
-           --set wifi.control   icon=$WIFI_ICN                                \
-                                label.drawing=off                       \
-                                click_script="$POPUP_CLICK_SCRIPT"      \
-                                popup.background.color=0x70000000       \
-                                popup.blur_radius=50                    \
-                                popup.background.corner_radius=5        \
-                                                                        \
-           --add item           wifi.ssid popup.wifi.control            \
-           --set wifi.ssid      icon=$NETWORK_ICN                                \
-                                label="${SSID}"                         \
-                                                                        \
-           --add item           wifi.speed     popup.wifi.control       \
-           --set wifi.speed     icon=$SPEED_ICN                        \
-                                script="$PLUGIN_DIR/wifi_click.sh"        \
-                                update_freq=10                          \
+source "$CONFIG_DIR/icons.sh"
+
+wifi=(
+	padding_right=-5
+	label.width=0
+	icon="$WIFI_DISCONNECTED"
+	script="$PLUGIN_DIR/wifi.sh"
+)
+
+sketchybar --add item wifi right \
+	--set wifi "${wifi[@]}" \
+	--subscribe wifi wifi_change mouse.clicked
