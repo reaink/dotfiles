@@ -7,15 +7,15 @@ source $HOME/.config/sketchybar/icons.sh
 export FONT="SF Pro"
 export NERD_FONT="SFMono Nerd Font"
 
-sketchybar --bar height=35        \
+sketchybar --bar height=32        \
                  blur_radius=50  \
                  radius=150  \
                  position=top     \
-                 y_offset=6 \
-                 padding_left=10  \
+                 y_offset=3 \
                  corner_radius=10 \
+                 padding_left=10  \
                  padding_right=10 \
-                 margin=10 \
+                 margin=5 \
                  color=0x25ffffff \
                  shadow=on
 
