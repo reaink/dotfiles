@@ -1,3 +1,3 @@
-#!/usr/bin/env sh
+#!/usr/bin/env zsh
 
-sketchybar --set $NAME label="$(date '+%h %d - %H:%M:%S')"
+sketchybar --set $NAME label="$(date '+%a %b %-d %-H:%M')"
