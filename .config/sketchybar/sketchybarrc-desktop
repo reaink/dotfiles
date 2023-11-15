@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 FONT_FACE="CaskaydiaCove Nerd Font"
+FONT_SF="SF-Mono"
 PLUGIN_DIR="$HOME/.config/sketchybar/plugins-desktop"
 PLUGIN_SHARED_DIR="$HOME/.config/sketchybar/plugins"
 

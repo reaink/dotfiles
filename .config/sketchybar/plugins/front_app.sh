@@ -23,11 +23,20 @@ case $INFO in
     ICON=
     ;;
 "Finder")
-    ICON=
+    ICON_PADDING_RIGHT=5
+    ICON=󰀶
+    ;;
+"Slack")
+    ICON_PADDING_RIGHT=7
+    ICON=󰒱
     ;;
 "Google Chrome")
     ICON_PADDING_RIGHT=7
-    ICON=
+    ICON=
+    ;;
+"Google Chrome Canary")
+    ICON_PADDING_RIGHT=7
+    ICON=󰊯
     ;;
 "IINA")
     ICON_PADDING_RIGHT=4
