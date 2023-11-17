@@ -23,6 +23,8 @@ alt - 5 : yabai -m space --focus 5
 
 alt - left : yabai -m space --focus prev
 alt - right : yabai -m space --focus next
+lctrl - left : yabai -m space --focus prev
+lctrl - right : yabai -m space --focus next
 
 # Moving windows
 shift + alt - h : yabai -m window --warp west

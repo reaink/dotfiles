@@ -29,7 +29,7 @@ bar=(
 	shadow=off
 	position=top
 	sticky=on
-	y_offset=0
+	y_offset=4
 	margin=6
 	topmost=window
 )
