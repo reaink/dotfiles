@@ -15,11 +15,9 @@ color["focused"]="0xE0808080"
 color["normal"]="0x00010101"
 color["preselect"]="0xE02d74da"
 
-# Uncomment to refresh ubersicht widget on workspace change
-# Make sure to replace WIDGET NAME for the name of the ubersicht widget
-#ubersicht_spaces_refresh_command="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"WIDGET NAME\"'"
+ubersicht_spaces_refresh_command="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"WIDGET NAME\"'"
 
-# sketchybar_spaces_refresh_command="sketchybar --reload"
+osascript -e 'tell application id "tracesOf.Uebersicht" to refresh'
 
 # ===== Loading Scripting Additions ============
 
@@ -85,13 +83,13 @@ yabai -m rule --add app="Spotify" space=4
 
 # ===== Signals ================================
 
-# yabai -m signal --add event=application_front_switched action="${sketchybar_spaces_refresh_command}"
-# yabai -m signal --add event=display_changed action="${sketchybar_spaces_refresh_command}"
-# yabai -m signal --add event=space_changed action="${sketchybar_spaces_refresh_command}"
-# yabai -m signal --add event=window_created action="${sketchybar_spaces_refresh_command}"
-# yabai -m signal --add event=window_destroyed action="${sketchybar_spaces_refresh_command}"
-# yabai -m signal --add event=window_focused action="${sketchybar_spaces_refresh_command}"
-# yabai -m signal --add event=window_title_changed action="${sketchybar_spaces_refresh_command}"
+yabai -m signal --add event=application_front_switched action="${ubersicht_spaces_refresh_command}"
+yabai -m signal --add event=display_changed action="${ubersicht_spaces_refresh_command}"
+yabai -m signal --add event=space_changed action="${ubersicht_spaces_refresh_command}"
+yabai -m signal --add event=window_created action="${ubersicht_spaces_refresh_command}"
+yabai -m signal --add event=window_destroyed action="${ubersicht_spaces_refresh_command}"
+yabai -m signal --add event=window_focused action="${ubersicht_spaces_refresh_command}"
+yabai -m signal --add event=window_title_changed action="${ubersicht_spaces_refresh_command}"
 
 set +x
 printf "yabai: configuration loaded...\\n"
