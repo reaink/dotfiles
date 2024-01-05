@@ -19,12 +19,6 @@ ubersicht_spaces_refresh_command="osascript -e 'tell application id \"tracesOf.U
 
 osascript -e 'tell application id "tracesOf.Uebersicht" to refresh'
 
-# ===== Loading Scripting Additions ============
-
-# See: https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)#macos-big-sur---automatically-load-scripting-addition-on-startup
-sudo yabai --load-sa
-yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
-
 # ===== Tiling setting =========================
 
 yabai -m config layout bsp
@@ -90,6 +84,12 @@ yabai -m signal --add event=window_created action="${ubersicht_spaces_refresh_co
 yabai -m signal --add event=window_destroyed action="${ubersicht_spaces_refresh_command}"
 yabai -m signal --add event=window_focused action="${ubersicht_spaces_refresh_command}"
 yabai -m signal --add event=window_title_changed action="${ubersicht_spaces_refresh_command}"
+
+# ===== Loading Scripting Additions ============
+
+# See: https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)#macos-big-sur---automatically-load-scripting-addition-on-startup
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
 
 set +x
 printf "yabai: configuration loaded...\\n"
