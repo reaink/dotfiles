@@ -1,0 +1,184 @@
+# Rust
+# ==============================================================================
+[[language]]
+name = "rust"
+auto-format = false
+# ==============================================================================
+
+
+# C
+# ==============================================================================
+[language-server.clangd]
+command = "clangd"
+
+[[language]]
+name = "c"
+auto-format = false
+language-servers = ["clangd"]
+# ==============================================================================
+
+
+# Gleam
+# ==============================================================================
+[language-server.gleam]
+command = "gleam"
+args = ["lsp"]
+
+[[language]]
+name = "gleam"
+auto-format = false
+language-servers = ["gleam"]
+# ==============================================================================
+
+
+# Go
+# ==============================================================================
+[language-server.gopls]
+command = "gopls"
+
+[language-server.gopls.config.hints]
+assignVariableTypes = true
+compositeLiteralFields = true
+constantValues = true
+functionTypeParameters = true
+parameterNames = true
+rangeVariableTypes = true
+
+[[language]]
+name = "go"
+auto-format = false
+language-servers = ["gopls"]
+# ==============================================================================
+
+
+# Python
+# ==============================================================================
+[language-server.pyright]
+command = "pyright-langserver"
+args = ["--stdio"]
+
+[language-server.ruff]
+command = "ruff-lsp"
+
+[[language]]
+name = "python"
+auto-format = false
+language-servers = ["pyright", "ruff"]
+roots = [".", "pyproject.toml", "pyrightconfig.json", "requirements.txt"]
+# ==============================================================================
+
+
+# Starlark
+# ==============================================================================
+[language-server.buck2-lsp]
+command = "buck2"
+args = ["lsp"]
+
+[[language]]
+name = "starlark"
+auto-format = false
+file-types = ["bzl", { glob = "BUCK" }]
+language-servers = ["buck2-lsp"]
+# ==============================================================================
+
+
+# JSON
+# ==============================================================================
+[language-server.vscode-json-language-server]
+command = "vscode-json-language-server"
+args = ["--stdio"]
+
+[[language]]
+name = "json"
+auto-format = false
+language-servers = ["vscode-json-language-server"]
+file-types = [
+  "json",
+  "jsonc",
+  "arb",
+  "ipynb",
+  "geojson",
+  "gltf",
+  "webmanifest",
+  "flake.lock",
+  ".babelrc",
+  ".bowerrc",
+  ".jscrc",
+  "js.map",
+  "ts.map",
+  "css.map",
+  ".jslintrc",
+  "jsonld",
+  ".vuerc",
+  "composer.lock",
+  ".watchmanconfig",
+]
+formatter = { command = "prettier", args = ["--parser", "json"] }
+# ==============================================================================
+
+
+# TOML
+# ==============================================================================
+[language-server.taplo]
+command = "taplo"
+args = ["lsp", "stdio"]
+config = {}
+
+[[language]]
+name = "toml"
+auto-format = false
+language-servers = ["taplo"]
+file-types = ["toml", "poetry.lock", "Cargo.lock"]
+comment-token = "#"
+# ==============================================================================
+
+
+# YAML
+# ==============================================================================
+[language-server.yaml-language-server]
+command = "yaml-language-server"
+args = ["--stdio"]
+
+[[language]]
+name = "yaml"
+auto-format = false
+language-servers = ["yaml-language-server"]
+formatter = { command = "prettier", args = ["--parser", "yaml"] }
+# ==============================================================================
+
+
+# HTML
+# ==============================================================================
+[language-server.vscode-html-language-server]
+command = "vscode-html-language-server"
+args = ["--stdio"]
+config = { provideFormatter = true }
+
+[[language]]
+name = "html"
+auto-format = false
+language-servers = ["vscode-html-language-server"]
+# ==============================================================================
+
+
+# Sass
+# ==============================================================================
+[[language]]
+name = "scss"
+auto-format = false
+# ==============================================================================
+
+
+# Ini
+# ==============================================================================
+[[language]]
+name = "ini"
+scope = "source.ini"
+file-types = ["ini", { glob = ".buckconfig" }]
+comment-token = "#"
+indent = { tab-width = 4, unit = "\t" }
+
+[[grammar]]
+name = "ini"
+source = { git = "https://github.com/justinmk/tree-sitter-ini", rev = "4d247fb876b4ae6b347687de4a179511bf67fcbc" }
+# ==============================================================================

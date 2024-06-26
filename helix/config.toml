@@ -1,0 +1,89 @@
+theme = "catppuccin_mocha"
+
+[editor]
+line-number = "relative"
+cursorline = true
+cursorcolumn = true
+bufferline = "always"
+color-modes = true
+
+[editor.statusline]
+left = [
+  "mode",
+  "spacer",
+  "version-control",
+  "spacer",
+  "workspace-diagnostics",
+  "spacer",
+  "spinner",
+]
+center = [
+  "diagnostics",
+  "file-modification-indicator",
+]
+right = [
+  "position",
+  "position-percentage",
+  "total-line-numbers",
+  "spacer",
+  "separator",
+  "primary-selection-length",
+  "selections",
+  "separator",
+  "file-type",
+  "file-line-ending",
+]
+
+[editor.lsp]
+display-inlay-hints = true
+
+[editor.cursor-shape]
+insert = "bar"
+select = "block"
+
+[editor.file-picker]
+hidden = false
+
+[editor.whitespace.render]
+newline = "all"
+
+# Custom remappings
+[keys.normal]
+o = ["open_below", "normal_mode"]
+O = ["open_above", "normal_mode"]
+C-s = ":w"
+C-r = ":config-reload"
+H = "goto_previous_buffer"
+L = "goto_next_buffer"
+K = "hover"
+
+[keys.insert]
+j = { k = "normal_mode" }
+
+[keys.select]
+o = ["open_below", "normal_mode"]
+O = ["open_above", "normal_mode"]
+C-c = "no_op"
+
+[keys.normal.g]
+a = "code_action"
+h = "goto_first_nonwhitespace"
+s = "goto_line_start"
+"[" = "goto_file_start"
+"]" = "goto_file_end"
+
+[keys.select.g]
+h = "goto_first_nonwhitespace"
+s = "goto_line_start"
+"[" = "goto_file_start"
+"]" = "goto_file_end"
+
+[keys.normal.space]
+c = ":buffer-close"
+n = ":new"
+q = ":quit"
+
+[keys.normal.space.j]
+j = "jumplist_picker" # custom
+h = "jump_backward" # custom
+l = "jump_forward" # custom
